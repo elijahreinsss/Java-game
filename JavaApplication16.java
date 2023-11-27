@@ -30,7 +30,15 @@ public static class Playerimpl implements Player {
     @Override
     public void reduceHealth(int damage) {
         health -= damage;
+    if(health<=0) {
+      system.out.println("Game Over Beter luck next time!");
+      return;
     }
+      int regeneration = (int) (0.10 * health);
+      health += regeneration;
+     system.out.println(After defeating the enemy, " + getName() + " regenerates " + regeneration + " health");
+     System.out.println("Current Health: " + getHealth());
+      
 }
 
    // Implementation for gamemode
