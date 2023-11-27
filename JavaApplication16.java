@@ -95,24 +95,50 @@ this.health = 100; // default enemy health
         Random rndm = new Random();
         int enemynum = 5;
         Enemy enemy = new enemyimpl();
+       List<Enemy> enemies = new ArrayList<>();
 
        for(int i = 0; i < 5; i++) {
-dsdasdsfdsfdsfdfdsfdsfsdfdsfsd
+       enemies.add(new enemyimpl());
        }
+       // Final Boss
+       enemy boss = new enemy(){
+         private int health = 150; // boss healt
 
+         @Override
+         public String enemy(){
+             return "boss";
+         }
+         @Override
+         public int getHealth(){
+            return health;
+         }
+         enemies.add(boss);
          
-         
-         System.out.println("you fell asleep at STI building and woke up at 3 am and you were the only one in the building  ");
+         System.out.println("You fell asleep at STI building and woke up at 3 am and you were the only one in the building  ");
+         System.out.println("");
+         System.out.println("");
          System.out.println("and you saw ashly holding nathan's head");
-         System.out.println("you followed ashly and investigated");
-         System.out.println("and you see that ashly has friends and you are seen as one of ashly's friends ");
-         System.out.println("You encounter a " +  enemy.enemy()  + "! What will you do?  " );
-            System.out.println("1. Engage in battle" + "\n2. Try to sneak past quietly");
+         System.out.println("");
+         System.out.println("");
+         System.out.println("You followed ashly and investigated");
+         System.out.println("");
+         System.out.println("");
+         System.out.println("You see that ashly has friends and you are seen as one of ashly's friends ");
+         System.out.println("");
+         System.out.println("");
+
+        // Encounter Regular enemies
+         for(int i = 0; i < enemies.size(); i++{
+          System.out.println("You encounter a " +  enemy.enemy()  + "! What will you do?  " );
+         System.out.println("");
+          System.out.println("1. Engage in battle" + "\n2. Try to sneak past quietly");
+         System.out.println("");
            System.out.print("Enter your choice: ");
+         System.out.println("");
+  
          int choice = scn.nextInt();
          scn.nextLine();
-         
-         switch(choice){
+           switch(choice){
             // option 1
              case 1:
                  System.out.println("You decided to engage in combat with the " + enemy.enemy() + " . ");
@@ -131,8 +157,7 @@ dsdasdsfdsfdsfdfdsfdsfsdfdsfsd
                      return;
                  }
                  break;
-                 
-             case 2:
+                  case 2:
                  // Option 2
                  System.out.println(" You attempt to sneak past the " + enemy.enemy() + " quietly. ");
                  // 50% chance 
@@ -155,6 +180,7 @@ dsdasdsfdsfdsfdfdsfdsfsdfdsfsd
                        }
                      
                        break;
+                   
                     default:
                 System.out.println("Invalid choice. The " + enemy.enemy() + " attacks you.");
 
@@ -168,9 +194,18 @@ dsdasdsfdsfdsfdfdsfdsfsdfdsfsd
                 break;
         }
     }
+     System.out.println("Press Enter to Continue");
+         scn.nextLine();
+ 
 }
+       // Final Boss Ashly
+                    System.out.println("You Encounter the final Boss Ashly");
+                    System.out.println(player.getName + "Ashly What did you do why, did you kill nathan");
+                    System.out.println("Ashly:");
 
-   
+fgdsdfgfdgfdgdgfgdfghhgfhgfh
+
+        
    
     // main class
    public static void main(String[] args) {
