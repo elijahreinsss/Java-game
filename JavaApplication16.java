@@ -63,6 +63,90 @@ public static class Playerimpl implements Player {
    }
  }
  
+ public static class StoryMode implements Gameplay{
+     @Override
+     public void startplay(Player player){
+         System.out.println(" Welcome to Story Mode " + player.getName() + " ! ");
+         System.out.println("Press P To Continue");
+         Scanner scn = new Scanner(System.in);
+         scn.nextLine();
+         
+         
+         // Story
+        Random rndm = new Random();
+        int enemynum = 10;
+        Enemy enemy = new enemyimpl();
+
+         
+         
+         System.out.println("you fell asleep at STI building and woke up at 3 am and you were the only one in the building  ");
+         System.out.println("and you saw ashly holding nathan's head");
+         System.out.println("you followed ashly and investigated");
+         System.out.println("and you see that ashly has friends and you are seen as one of ashly's friends ");
+         System.out.println("You encounter a " +  enemy.enemy()  + "! What will you do?  " );
+            System.out.println("1. Engage in battle" + "\n2. Try to sneak past quietly");
+           System.out.print("Enter your choice: ");
+         int choice = scn.nextInt();
+         scn.nextLine();
+         
+         switch(choice){
+            // option 1
+             case 1:
+                 System.out.println("You decided to engage in combat with the " + enemy.enemy() + " . ");
+                 int damage = enemy.attack();
+                 System.out.println("You attack the " + enemy.enemy() + " and deal " + damage + " damage. ");
+                 
+                 // enemy attack
+                 int enemydmg = enemy.attack();
+                 System.out.println(" The " + enemy.enemy() + " counter attacks and deals" + enemydmg + " damage. ");
+                 
+                 //Reduce player health
+                 player.reduceHealth(enemydmg);
+                 
+                 if(player.getHealth() <= 0) {
+                     System.out.println("Game over");
+                     return;
+                 }
+                 break;
+                 
+             case 2:
+                 // Option 2
+                 System.out.println(" You attempt to sneak past the " + enemy.enemy() + " quietly. ");
+                 // 50% chance 
+                 int sneakchance = rndm.nextInt(2); 
+                 if(sneakchance == 0) {
+                     System.out.println(" Success! you manage to avoid the " + enemy.enemy() + " . ");
+                 }else{
+                     System.out.println(" Oops! you have been spotted " + enemy.enemy() + " . ");
+                     
+                     // enemy attacks
+                     int senemydmg = enemy.attack();
+                     System.out.println(" The " + enemy.enemy() + " attacks you and deals " + senemydmg + " damage. ");
+                     
+                     //reduce player health
+                     player.reduceHealth(senemydmg);
+                     
+                       if (player.getHealth() <= 0) {
+                         System.out.println("Game over");
+                         return;
+                       }
+                     
+                       break;
+                    default:
+                System.out.println("Invalid choice. The " + enemy.enemy() + " attacks you.");
+
+                int defaultEnemyDmg = enemy.attack();
+                player.reduceHealth(defaultEnemyDmg);
+
+                if (player.getHealth() <= 0) {
+                    System.out.println("Game over! Your health reached zero.");
+                    return;
+                }
+                break;
+        }
+    }
+}
+
    
    
     // main class
@@ -137,9 +221,13 @@ while (player.getHealth() > 0){
      
      if(player.getHealth() <= 0){
          System.out.println("Game Over");
+         return;
      }
 }
+      System.out.println("Press E tp");
+
       
   }
     
+ }
 }
