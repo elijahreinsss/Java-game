@@ -61,13 +61,24 @@ public static class Playerimpl implements Player {
     }
    // Implementation of Enemy
  public static class enemyimpl implements  Enemy {
-       @Override
+      private int health;
+
+public enemyimpl() {
+this.health = 100; // default enemy health
+}
+   
+
+   @Override
        public String enemy(){
            return "enemy";
        }
    @Override
    public int attack(){
        return 10;
+   }
+   @Override
+   public int getHealth(){
+      return health;
    }
  }
  
@@ -82,8 +93,12 @@ public static class Playerimpl implements Player {
          
          // Story
         Random rndm = new Random();
-        int enemynum = 10;
+        int enemynum = 5;
         Enemy enemy = new enemyimpl();
+
+       for(int i = 0; i < 5; i++) {
+dsdasdsfdsfdsfdfdsfdsfsdfdsfsd
+       }
 
          
          
