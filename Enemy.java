@@ -8,8 +8,10 @@ package javaapplication16;
  *
  * @author Administrator
  */
-public interface Enemy {
-    String enemy();
-    int attack();
-    
-}
+   public  interface Enemy {
+        String getName();
+                int getDefense();
+        int attack();
+        int getHealth();
+        boolean canDodge();
+    }
