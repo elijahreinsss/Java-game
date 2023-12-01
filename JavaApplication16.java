@@ -11,13 +11,11 @@ public class JavaApplication16 {
         private String name;
         private int health;
         private int defense;
-        private int level;
 
-        public PlayerImpl(String name, int health, int defense, int level) {
+        public PlayerImpl(String name, int health, int defense) {
             this.name = name;
             this.health = health;
             this.defense = defense;
-            this.level = level;
         }
 
         @Override
@@ -25,6 +23,7 @@ public class JavaApplication16 {
             return name;
         }
 
+        
         @Override
         public int attack() {
             return Math.max(0, rndm.nextInt(11) + 5 - defense);
@@ -85,7 +84,6 @@ public class JavaApplication16 {
     // Enemy Implementation
     public static class EnemyImpl implements Enemy {
         private int defense;
-        private int level;
         private int health;
 
         @Override
