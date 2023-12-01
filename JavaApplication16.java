@@ -11,11 +11,15 @@ public class JavaApplication16 {
         private String name;
         private int health;
         private int defense;
+        private int level;
 
-        public PlayerImpl(String name, int health, int defense) {
+
+        public PlayerImpl(String name, int health, int defense, int level) {
             this.name = name;
             this.health = health;
             this.defense = defense;
+         this.level = level;
+
         }
 
         @Override
